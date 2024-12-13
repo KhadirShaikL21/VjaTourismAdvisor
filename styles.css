@@ -1,0 +1,620 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-bottom: 1px solid #eaeaea;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+}
+
+.nav-links a i {
+    color: #00af87; /* Icon color matching theme */
+}
+
+.currency {
+    font-size: 14px;
+    color: #000;
+}
+
+/* Mobile Toggle (Hamburger Icon) */
+.mobile-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Hero Section Styling */
+.hero {
+    position: relative;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./45251-places-to-visit-in-vijayawada.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay on the background */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Bring content in front of the background */
+    color: #fff;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.hero-text form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text input {
+    padding: 12px;
+    width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 25px; /* Add border radius to search input */
+    margin-right: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.hero-text button {
+    padding: 12px 20px;
+    background-color: #00af87;
+    border: none;
+    border-radius: 25px; /* Add border radius to search button */
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Hero Section Anchor Links */
+.hero-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.hero-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 20px;
+}
+
+.hero-links a i {
+    color: #00af87; /* Icon color matching theme */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: left;
+        padding: 10px 0;
+        border-bottom: 1px solid #eaeaea;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-text {
+        margin-bottom: 20px;
+    }
+
+    .hero-text input {
+        width: 80%;
+    }
+
+    .hero-text button {
+        padding: 12px 15px;
+    }
+
+    .hero-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Top Places Section */
+.top-places {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.place-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.place-card:hover {
+    transform: translateY(-10px);
+}
+
+.place-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-info h3 {
+    font-size: 22px;
+    color: #00af87;
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .places-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .places-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-info h3 {
+        font-size: 18px;
+    }
+
+    .card-info p {
+        font-size: 14px;
+    }
+}
+
+/* Top Restaurants and Hotels Section */
+.top-restaurants-hotels {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+.places-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.place-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.place-card:hover {
+    transform: translateY(-10px);
+}
+
+.place-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-info h3 {
+    font-size: 22px;
+    color: #00af87;
+    margin-bottom: 10px;
+}
+
+.card-info p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .places-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .places-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .places-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-info h3 {
+        font-size: 18px;
+    }
+
+    .card-info p {
+        font-size: 14px;
+    }
+}
+
+/* Descriptive Paragraph Section */
+.description {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    margin-top: 50px;
+}
+
+.description-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.description-header h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+.description-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.description-content p {
+    margin-bottom: 20px;
+}
+
+/* Responsive Design for Paragraph Section */
+@media (max-width: 768px) {
+    .description-header h2 {
+        font-size: 28px;
+    }
+
+    .description-content {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .description-header h2 {
+        font-size: 24px;
+    }
+
+    .description-content {
+        font-size: 14px;
+    }
+}
+
+/* Footer Section */
+footer {
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    color: #fff;
+    padding: 60px 20px;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+/* Dim the Background of the Webpage */
+footer::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.footer-column:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer Column Headings */
+.footer-column h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Footer Column Text */
+.footer-column p,
+.footer-column ul {
+    color: #ccc;
+    font-size: 16px;
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #ccc;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom-left,
+.footer-bottom-right {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-bottom-left h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-bottom-left ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-bottom-left ul li {
+    margin-bottom: 10px;
+}
+
+.footer-bottom-left ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-left ul li a:hover {
+    color: #3498db;
+}
+
+.footer-bottom-right p {
+    text-align: right;
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Hover Effects and Transitions for Footer */
+footer .footer-column:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-column h3 {
+        font-size: 18px;
+    }
+
+    .footer-column ul li a {
+        font-size: 14px;
+    }
+
+    .social-icons {
+        font-size: 20px;
+    }
+
+    .footer-bottom-left h4 {
+        font-size: 16px;
+    }
+
+    .footer-bottom-right p {
+        font-size: 12px;
+    }
+}
